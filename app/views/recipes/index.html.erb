@@ -1,5 +1,11 @@
-<h1>Searching for - <%= @search_term%></h1>
-<table border="1">
+<div class = "center jumbotron">
+<h1>Looking for <%= @search_term%> ?</h1>
+</div>
+
+<div class = "container">
+<h1> Supply the keyword and app will query the Food2Fork API for a result</h1>
+
+<table class="table">
   <tr>
   	<th>Thumbnail</th>
   	<th>Title</th>
@@ -10,10 +16,13 @@
       
        <td> <%= link_to image_tag(recipe["image_url"], height: '100', width: '100'), href: "source_url" %></td>
        
-      <td><%= link_to sanitize(recipe["title"], href: "source_url")%></td>
+     <td><%= link_to raw(recipe["title"]), href: "source_url" %></td>
+	 
       <td><%= recipe["social_rank"] %></td>
     </tr>
   <% end %>
 </table>
+</div>
+</div>
 
 
